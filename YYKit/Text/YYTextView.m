@@ -289,7 +289,8 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
             }
         } else { // range selected
             if ((self.isFirstResponder && !_state.deleteConfirm) ||
-                (!self.isFirstResponder && _state.selectedWithoutEdit)) {
+                (!self.isFirstResponder && _state.selectedWithoutEdit) ||
+                (!self.isFirstResponder && self.isSelectable && !self.isEditable)) {
                 NSArray *rects = [_innerLayout selectionRectsForRange:selectedRange];
                 if (rects) [allRects addObjectsFromArray:rects];
                 containsDot = rects.count > 0;
