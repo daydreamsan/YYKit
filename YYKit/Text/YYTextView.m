@@ -2147,7 +2147,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     [_inputDelegate textWillChange:self];
      _innerText = text;
     [self _parseText];
-    _selectedTextRange = [YYTextRange rangeWithRange:NSMakeRange(0, _innerText.length)];
+    _selectedTextRange = [YYTextRange rangeWithRange:NSMakeRange(0, 0)];
     [_inputDelegate textDidChange:self];
     [_inputDelegate selectionDidChange:self];
     
